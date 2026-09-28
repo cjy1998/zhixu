@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pathly.local/schema/roadmap.schema.json",
+  "title": "Roadmap",
+  "description": "AI 生成的学习路线（/ai/roadmap 的 result 载荷；POST /api/topics 的入参）。节点树限定在三级以内：stage 内 parentRef 只能指向同 stage 中已在前出现的节点 ref。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["title", "subtitle", "icon", "color", "estimatedWeeks", "weeklyHours", "summary", "stages"],
+  "properties": {
+    "title": { "type": "string", "minLength": 2, "maxLength": 40 },
+    "subtitle": { "type": "string", "minLength": 2, "maxLength": 80 },
+    "icon": { "enum": ["coffee", "pen", "language", "book", "code", "target", "cap", "spark", "route", "leaf"] },
+    "color": { "enum": ["purple", "gold", "blue", "green"] },
+    "estimatedWeeks": { "type": "integer", "minimum": 1, "maximum": 52 },
+    "weeklyHours": { "type": "integer", "minimum": 1, "maximum": 80 },
+    "summary": { "type": "string", "minLength": 20, "maxLength": 400, "description": "整体思路与学习建议，一段话" },
+    "stages": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "weekRange", "goal", "nodes"],
+        "properties": {
+          "title": { "type": "string", "minLength": 2, "maxLength": 40 },
+          "weekRange": { "type": "string", "maxLength": 20, "description": "如：第 1–2 周" },
+          "goal": { "type": "string", "minLength": 10, "maxLength": 200 },
+          "nodes": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 12,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["ref", "title", "objective", "durationMinutes"],
+              "properties": {
+                "ref": { "type": "string", "pattern": "^n\\d+$", "description": "本路线生成期内的临时 ID，全局唯一（n1、n2…）" },
+                "parentRef": {
+                  "type": ["string", "null"],
+                  "pattern": "^n\\d+$",
+                  "description": "父节点 ref；只能引用【同 stage 内、本节点之前】已定义的 ref，保持树深<=3；null=当前 stage 的根节点"
+                },
+                "title": { "type": "string", "minLength": 2, "maxLength": 60 },
+                "objective": { "type": "string", "minLength": 10, "maxLength": 200, "description": "可检验的学习目标（通过的标准是什么），不含抽象词如「了解/熟悉」" },
+                "durationMinutes": { "type": "integer", "minimum": 10, "maximum": 240 }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://pathly.local/schema/review.schema.json",
+  "title": "Review",
+  "description": "/ai/review 的输出：对一个全部完成的阶段做 AI 复盘（对照原型 15 屏），信息按「已掌握 / 仍需注意 / 下一步」三层组织，禁止只输出抽象鼓励。",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["stageTitle", "summary", "mastered", "needsAttention", "nextStep"],
+  "properties": {
+    "stageTitle": { "type": "string", "maxLength": 60 },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "abilityRating"],
+      "properties": {
+        "text": { "type": "string", "minLength": 30, "maxLength": 400 },
+        "abilityRating": { "type": "integer", "minimum": 1, "maximum": 5, "description": "本阶段能力评级（1–5），作为一段学习周期内的粗粒度自评" }
+      }
+    },
+    "mastered": {
+      "type": "array", "minItems": 1, "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["point", "evidence"],
+        "properties": {
+          "point": { "type": "string", "minLength": 2, "maxLength": 80 },
+          "evidence": { "type": "string", "minLength": 10, "maxLength": 200, "description": "掌握了什么的依据（如：某次检验通过表现/该节点作答情况）" }
+        }
+      }
+    },
+    "needsAttention": {
+      "type": "array", "minItems": 1, "maxItems": 5,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["point", "reason"],
+        "properties": {
+          "point": { "type": "string", "minLength": 2, "maxLength": 80 },
+          "reason": { "type": "string", "minLength": 10, "maxLength": 200, "description": "为什么需要注意（易错点/薄弱点，可用检验记录佐证）" }
+        }
+      }
+    },
+    "nextStep": {
+      "type": "array", "minItems": 1, "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["action", "reason"],
+        "properties": {
+          "action": { "type": "string", "minLength": 6, "maxLength": 140, "description": "可执行动作（做什么练习/复习什么/在下一个阶段怎么学）" },
+          "reason": { "type": "string", "minLength": 6, "maxLength": 160 }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: zhixu
+  datasource:
+    url: jdbc:mysql://39.105.220.230:3306/zhixu?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+server:
+  port: 8080
