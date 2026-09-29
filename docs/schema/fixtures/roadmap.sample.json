@@ -1,0 +1,38 @@
+{
+  "title": "springBoot学习",
+  "subtitle": "springBoot学习路线规划",
+  "icon": "book",
+  "color": "purple",
+  "estimatedWeeks": 12,
+  "weeklyHours": 16,
+  "summary": "建议。。。。........................................",
+  "stages": [
+      {
+        "title": "基础概念",
+        "weekRange": "第 1–2 周",
+        "goal": "基本了解基础概念，跑通demo",
+        "nodes": [
+          {
+            "ref": "n1",
+            "title": "常用注解",
+            "objective": "通过注解完成简单的crud",
+            "durationMinutes": 120
+          }
+        ]
+      },
+    {
+      "title": "集成数据库",
+      "weekRange": "第 3-4 周",
+      "goal": "基本了解数据库，跑通demo",
+      "nodes": [
+        {
+          "ref": "n2",
+          "parentRef": "n1",
+          "title": "mybatis",
+          "objective": "通过mybatis完成简单的crud",
+          "durationMinutes": 120
+        }
+      ]
+    }
+  ]
+}

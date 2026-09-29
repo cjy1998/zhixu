@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "score": 88,
+  "feedback": "对学习者答案的一两句总评（先肯定再指正）",
+  "missingPoints": ["应覆盖但没覆盖的关键点，可为空"],
+  "wrongPoints": ["答案中的错误理解，可为空"],
+  "suggestions": ["可执行的下一步复习建议（做什么、看什么、写什么）"],
+  "strengths": ["答对/接近的关键点，可为空"]
+}
