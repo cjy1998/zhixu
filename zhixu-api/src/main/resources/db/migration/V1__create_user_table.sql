@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS `user` (
+    `id` INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+    `nickname` VARCHAR(255) NOT NULL,
+    `email` VARCHAR(50) NOT NULL UNIQUE,
+    `password` VARCHAR(255) NOT NULL,
+    `user_type` TINYINT NOT NULL DEFAULT 1 COMMENT '1 普通用户',
+    `remark` VARCHAR(255) DEFAULT '终身学习者' COMMENT '座右铭',
+    PRIMARY KEY(`id`)
+    );
+
+
