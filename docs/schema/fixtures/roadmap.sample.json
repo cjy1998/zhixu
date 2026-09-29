@@ -5,7 +5,7 @@
   "color": "purple",
   "estimatedWeeks": 12,
   "weeklyHours": 16,
-  "summary": "建议。。。。",
+  "summary": "建议。。。。........................................",
   "stages": [
       {
         "title": "基础概念",
@@ -14,7 +14,6 @@
         "nodes": [
           {
             "ref": "n1",
-            "parentRef": "",
             "title": "常用注解",
             "objective": "通过注解完成简单的crud",
             "durationMinutes": 120
@@ -27,8 +26,8 @@
       "goal": "基本了解数据库，跑通demo",
       "nodes": [
         {
-          "ref": "n1",
-          "parentRef": "",
+          "ref": "n2",
+          "parentRef": "n1",
           "title": "mybatis",
           "objective": "通过mybatis完成简单的crud",
           "durationMinutes": 120

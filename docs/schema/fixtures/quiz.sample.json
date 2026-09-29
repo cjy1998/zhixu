@@ -1,0 +1,41 @@
+{
+  "nodeTitle": "面向对象：封装与继承",
+  "questions": [
+    {
+      "type": "choice",
+      "prompt": "关于「封装」的目的，下列说法最准确的是哪一项？",
+      "options": [
+        "把数据和操作数据的方法绑定在一起，隐藏内部实现细节",
+        "让一个类可以同时继承多个父类的能力",
+        "减少代码文件的数量，方便打包发布",
+        "提高程序的运行速度"
+      ],
+      "answerIndex": 0,
+      "explanation": "封装的核心是把状态与操作绑定，并通过访问控制隐藏实现；多继承与封装无关，也不影响文件数量或运行性能。"
+    },
+    {
+      "type": "concept",
+      "prompt": "用自己的话解释：封装和继承分别解决什么问题？各举一个生活化的例子。",
+      "referenceAnswer": "封装把数据和操作数据的方法绑定在一起，隐藏内部细节只暴露必要接口，例如自动售货机：内部的找零逻辑不可见，只留下投币口和按钮。继承表达 is-a 关系，让子类复用父类的通用能力，例如哈士奇是一种狗，天生会吃饭和叫唤，再补充自己拆家的特性。",
+      "keyPoints": [
+        "封装隐藏内部实现细节",
+        "封装通过访问控制保护数据",
+        "继承表达 is-a 复用关系",
+        "有贴近生活的举例"
+      ]
+    },
+    {
+      "type": "code",
+      "prompt": "定义一个 Animal 类（含 private 的 name 字段、构造方法、speak() 方法），再定义 Dog 类继承它，重写 speak() 返回「汪汪」。",
+      "language": "java",
+      "starterCode": "class Animal {\n    // 1. private name 字段\n    // 2. 构造方法\n    // 3. speak() 方法\n}\n\nclass Dog extends Animal {\n    // 重写 speak()，返回「汪汪」\n}",
+      "referenceAnswer": "class Animal {\n    private String name;\n    public Animal(String name) { this.name = name; }\n    public String speak() { return \"...\"; }\n}\n\nclass Dog extends Animal {\n    public Dog(String name) { super(name); }\n    @Override\n    public String speak() { return \"汪汪\"; }\n}",
+      "checks": [
+        "Animal 的 name 字段使用 private",
+        "Dog 使用 extends 继承 Animal",
+        "Dog 正确重写 speak() 并返回汪汪",
+        "子类构造方法通过 super 传参"
+      ]
+    }
+  ]
+}
