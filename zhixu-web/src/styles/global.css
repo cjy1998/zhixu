@@ -1,0 +1,306 @@
+@charset "UTF-8";
+
+:root {
+  --brand: #276b56;
+  --brand-dark: #1c5141;
+  --brand-soft: #edf5ef;
+  --brand-tint: #f4f8f3;
+  --ink: #25372f;
+  --text: #3e4943;
+  --muted: #697265;
+  --line: #e8ebe5;
+  --bg: #f8f9f5;
+  --surface: #fff;
+  --green: #2e7956;
+  --green-bg: #edf7ef;
+  --blue: #3972af;
+  --blue-bg: #edf4fc;
+  --orange: #a96819;
+  --orange-bg: #fff5e5;
+  --red: #b45149;
+  --red-bg: #fcf0ee;
+  --purple: #78608f;
+  --purple-bg: #f0ecf6;
+  --radius: 14px;
+  --shadow: 0 4px 20px #263c2d04;
+  --font:
+    -apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans CJK SC',
+    sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 14px/1.65 var(--font);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button,
+a {
+  touch-action: manipulation;
+}
+
+button {
+  cursor: pointer;
+  color: inherit;
+  border: 0;
+  background: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #89b7a3;
+  outline-offset: 4px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--ink);
+}
+
+h1 {
+  font-size: 28px;
+  letter-spacing: -0.6px;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+h2 {
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1.5;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+h4 {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+small {
+  font-size: 12px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.7;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+.icon.sm {
+  width: 16px;
+  height: 16px;
+}
+
+.icon.lg {
+  width: 26px;
+  height: 26px;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.brand-text {
+  color: var(--brand);
+}
+
+.small {
+  font-size: 12px;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 1.9px;
+  font-weight: 650;
+  color: var(--brand);
+  text-transform: uppercase;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.gap6 {
+  gap: 6px;
+}
+
+.gap8 {
+  gap: 8px;
+}
+
+.gap12 {
+  gap: 12px;
+}
+
+.gap16 {
+  gap: 16px;
+}
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.numeric {
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font);
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 200;
+  left: 240px;
+  top: -70px;
+  background: white;
+  padding: 12px 20px;
+}
+
+.skip-link:focus {
+  top: 10px;
+}
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.45;
+  }
+}
+
+@keyframes success-pop {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.07);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes confetti {
+  from {
+    opacity: 0;
+    translate: 0 -15px;
+  }
+  to {
+    opacity: 1;
+    translate: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *:before,
+  *:after {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.spinner {
+  animation: spin 1.8s linear infinite;
+}

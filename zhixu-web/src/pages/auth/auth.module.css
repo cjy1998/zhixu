@@ -1,0 +1,375 @@
+.authPage {
+  min-height: 100vh;
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #fff;
+}
+
+.authStory {
+  position: relative;
+  background: #edf3e7;
+  padding: 49px 60px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.authStory:after {
+  content: '';
+  position: absolute;
+  width: 540px;
+  height: 540px;
+  border: 1px solid #dce7cf;
+  border-radius: 50%;
+  left: -160px;
+  bottom: -320px;
+}
+
+.authStoryContent {
+  max-width: 470px;
+  margin: auto 0;
+  padding: 48px 0;
+  z-index: 1;
+}
+
+.authStory h1 {
+  font-size: 40px;
+  line-height: 1.65;
+  letter-spacing: 1px;
+  color: #33513a;
+  margin: 16px 0;
+}
+
+.authStory h1 em {
+  font-style: normal;
+  color: #5c7248;
+  position: relative;
+}
+
+.authStoryContent > p {
+  font-size: 13px;
+  color: #666f59;
+  line-height: 2.1;
+}
+
+.authMiniRoute {
+  margin-top: 34px;
+  position: relative;
+  padding-left: 35px;
+  max-width: 370px;
+}
+
+.authMiniRoute:before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 25px;
+  bottom: 32px;
+  width: 1px;
+  background: #bfd0ae;
+}
+
+.miniRouteCard {
+  border: 1px solid #e1e9d7;
+  padding: 16px 18px;
+  background: #ffffffb3;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+
+.miniRouteCard:before {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #86a36c;
+  left: -32px;
+  top: 28px;
+  box-shadow: 0 0 0 4px #edf3e7;
+}
+
+.miniRouteCard:nth-child(2) {
+  margin-left: 18px;
+  transform: rotate(-2deg);
+  background: white;
+  box-shadow: 0 8px 20px #48693609;
+}
+
+.miniRouteCard:nth-child(2):before {
+  left: -50px;
+  background: #bfca79;
+}
+
+.miniRouteCard:nth-child(3):before {
+  background: #d0dbc3;
+}
+
+.miniRouteCard h4 {
+  font-size: 11px;
+  color: #61724f;
+}
+
+.miniRouteCard p {
+  font-size: 9px;
+  color: #69715e;
+  margin-top: 4px;
+}
+
+.miniRouteCard > .badge {
+  margin-left: auto;
+  font-size: 9px;
+}
+
+.miniRouteCard .circleIcon {
+  width: 31px;
+  height: 31px;
+  border-radius: 8px;
+}
+
+.miniRouteCard .circleIcon .icon {
+  width: 17px;
+  height: 17px;
+}
+
+.authQuote {
+  border-top: 1px solid #dce6d1;
+  padding-top: 20px;
+  font-size: 11px;
+  color: #656f56;
+  max-width: 410px;
+}
+
+.authQuote small {
+  display: block;
+  color: #686e5e;
+  font-size: 10px;
+  margin-top: 8px;
+}
+
+.authRight {
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 70px 40px;
+}
+
+.authFormWrap {
+  width: 355px;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.authFormWrap .eyebrow {
+  font-size: 10px;
+  margin-bottom: 9px;
+}
+
+.authFormWrap h2 {
+  font-size: 28px;
+  margin-bottom: 9px;
+}
+
+.authFormWrap > p {
+  font-size: 12px;
+  color: #6a6f63;
+  margin-bottom: 31px;
+}
+
+.authTabs {
+  display: flex;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 25px;
+  gap: 28px;
+}
+
+.authTabs .tab {
+  padding: 9px 0 12px;
+  font-size: 13px;
+  position: relative;
+  color: #676e62;
+}
+
+.authTabs .tab.active {
+  font-weight: 600;
+  color: var(--brand);
+}
+
+.authTabs .tab.active:after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--brand);
+}
+
+.authForm .field {
+  margin-bottom: 18px;
+}
+
+.authForm .field input {
+  height: 44px;
+}
+
+.inputIconWrap {
+  position: relative;
+}
+
+.inputIconWrap > input {
+  padding-right: 43px;
+}
+
+.inputIconWrap > button {
+  position: absolute;
+  right: 4px;
+  top: 4px;
+}
+
+.rememberRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 10px;
+  color: #686f5c;
+  margin: 4px 0 22px;
+}
+
+.checkLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: #686f5f;
+  line-height: 1.9;
+}
+
+.checkLabel input {
+  accent-color: var(--brand);
+  width: 13px;
+  height: 13px;
+}
+
+.authSeparator {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: #696f62;
+  font-size: 10px;
+  margin: 25px 0 18px;
+}
+
+.authSeparator:before,
+.authSeparator:after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.demoWarning {
+  padding: 11px 13px;
+  background: #f7f9f3;
+  border: 1px solid #edf0e5;
+  border-radius: 7px;
+  color: #697060;
+  font-size: 9px;
+  margin-top: 21px;
+  line-height: 1.9;
+}
+
+.authFooter {
+  position: absolute;
+  bottom: 27px;
+  font-size: 9px;
+  color: #6b6f65;
+  text-align: center;
+  left: 30px;
+  right: 30px;
+}
+
+@media (max-width: 1180px) {
+  .authStory {
+    padding: 40px;
+  }
+  .authStory h1 {
+    font-size: 34px;
+  }
+  .authRight {
+    padding: 65px 30px;
+  }
+}
+
+@media (max-width: 980px) {
+  .authStory {
+    padding: 35px;
+  }
+  .authStory h1 {
+    font-size: 29px;
+  }
+  .authStoryContent > p {
+    font-size: 12px;
+  }
+  .miniRouteCard {
+    padding: 12px;
+  }
+  .authFormWrap {
+    width: 320px;
+  }
+  .authRight {
+    padding: 60px 22px;
+  }
+}
+
+@media (max-width: 760px) {
+  .authPage {
+    grid-template-columns: 1fr;
+  }
+  .authStory {
+    display: none;
+  }
+  .authRight {
+    min-height: 100dvh;
+  }
+  .authFormWrap {
+    width: 355px;
+    max-width: 100%;
+  }
+  .authFormWrap:before {
+    content: '知序 Pathly';
+    font-size: 25px;
+    color: var(--brand);
+    font-weight: 650;
+    display: block;
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 540px) {
+  .authRight {
+    padding: 96px 28px 75px;
+  }
+  .authFormWrap h2 {
+    font-size: 25px;
+  }
+  .authFormWrap > p {
+    font-size: 11px;
+  }
+  .authForm .field label {
+    font-size: 12px;
+  }
+  .authForm .field input {
+    font-size: 14px;
+  }
+  .authFooter {
+    font-size: 8px;
+  }
+}

@@ -1,0 +1,112 @@
+.heatmap {
+  display: flex;
+  gap: 7px;
+}
+
+.heatDays {
+  display: grid;
+  grid-template-rows: repeat(7, 11px);
+  gap: 4px;
+  padding-top: 22px;
+  font-size: 8px;
+  color: #6b6f67;
+  line-height: 11px;
+  width: 13px;
+  flex-shrink: 0;
+}
+
+.heatArea {
+  flex: 1;
+  min-width: 0;
+}
+
+.heatMonths {
+  display: flex;
+  justify-content: space-between;
+  height: 22px;
+  font-size: 9px;
+  color: #676e60;
+  padding-right: 7px;
+}
+
+.heatGrid {
+  display: grid;
+  grid-template-rows: repeat(7, 11px);
+  grid-auto-flow: column;
+  grid-auto-columns: minmax(0, 1fr);
+  gap: 4px;
+}
+
+.heatCell {
+  background: #edf0e8;
+  border-radius: 2px;
+  position: relative;
+  min-width: 0;
+  border: 0;
+  padding: 0;
+  display: block;
+  transition: outline-color 0.15s;
+}
+
+.heatCell.level1 {
+  background: #d6e6c9;
+}
+
+.heatCell.level2 {
+  background: #abc898;
+}
+
+.heatCell.level3 {
+  background: #77a475;
+}
+
+.heatCell.level4 {
+  background: #3c7854;
+}
+
+.heatCell.future {
+  background: #f3f4ef;
+}
+
+.heatCell.today {
+  outline: 1px solid #83a36c;
+  outline-offset: 1px;
+}
+
+.heatCell:hover:not(:disabled) {
+  outline: 2px solid #658453;
+  outline-offset: 1px;
+}
+
+.heatLegend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 4px;
+  font-size: 9px;
+  color: #696f61;
+  margin-top: 12px;
+}
+
+.heatLegend i {
+  width: 9px;
+  height: 9px;
+  border-radius: 2px;
+  background: #edf0e8;
+}
+
+.heatLegend i:nth-of-type(2) {
+  background: #d6e6c9;
+}
+
+.heatLegend i:nth-of-type(3) {
+  background: #abc898;
+}
+
+.heatLegend i:nth-of-type(4) {
+  background: #77a475;
+}
+
+.heatLegend i:nth-of-type(5) {
+  background: #3c7854;
+}

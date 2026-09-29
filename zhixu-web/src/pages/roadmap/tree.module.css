@@ -1,0 +1,413 @@
+.stageCards,
+.roadmapTree {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  min-width: 0;
+}
+
+.nodeBranch {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.nodeChildren {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+  margin-left: 16px;
+  padding-left: 11px;
+  border-left: 1px solid var(--line);
+  min-width: 0;
+}
+
+.nodeCard {
+  padding: 17px 18px 14px;
+  cursor: pointer;
+  transition:
+    border-color 0.18s,
+    box-shadow 0.18s;
+  background: white;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  min-height: 133px;
+  display: flex;
+  flex-direction: column;
+}
+
+.nodeCard:hover {
+  border-color: #a8bfa4;
+  box-shadow: 0 4px 15px #3a503707;
+}
+
+.nodeCard.active {
+  border-color: #b9cfe6;
+  background: #fcfdff;
+  box-shadow: 0 2px 7px #5489bb07;
+}
+
+.nodeCard.failed {
+  border-color: #ecd6d0;
+  background: #fffdfc;
+}
+
+.nodeCard.done {
+  background: #fcfdfb;
+}
+
+.nodeTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.nodeIndex {
+  font-size: 10px;
+  letter-spacing: 0.6px;
+  color: #696e62;
+}
+
+.nodeCard h3 {
+  font-size: 14px;
+  line-height: 1.65;
+  letter-spacing: 0.1px;
+  font-weight: 550;
+}
+
+.nodeCard.done h3 {
+  color: #607157;
+}
+
+.nodeBottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 12px;
+  color: #6b7064;
+  font-size: 10px;
+  gap: 8px;
+}
+
+.nodeBottom span {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nodeBottom .icon {
+  width: 12px;
+  height: 12px;
+}
+
+.nodeCard .badge {
+  font-size: 9px;
+  padding: 2px 6px;
+}
+
+.nodeAction {
+  color: var(--blue);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.nodeCard.pending .nodeAction {
+  color: var(--orange);
+}
+
+.nodeCard.failed .nodeAction {
+  color: var(--red);
+}
+
+.nodeObjective {
+  margin-top: 6px;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.treeCard {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  min-height: 100px;
+  min-width: 0;
+  max-width: 100%;
+  cursor: default;
+}
+
+.treeCard.isGroup {
+  border-inline-start: 3px solid var(--brand);
+}
+
+.treeCard.isGroup:not(.active):not(.failed) {
+  background: var(--brand-tint);
+}
+
+.treeCard.isGroup h3 {
+  font-weight: 650;
+}
+
+.nodeMain {
+  display: block;
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 44px;
+  padding: 4px;
+  border-radius: 5px;
+  overflow-wrap: anywhere;
+}
+
+.nodeMain:hover h3 {
+  color: var(--brand);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.treeCard h3 {
+  font-size: 14px;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+.treeCard .nodeTop {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 6px 10px;
+  margin-bottom: 5px;
+  min-width: 0;
+}
+
+.treeCard .nodeIndex,
+.treeCard .badge {
+  font-size: 12px;
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.treeCard .nodeIndex {
+  letter-spacing: 0.3px;
+  font-variant-numeric: tabular-nums;
+}
+
+.treeCard .nodeBottom {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  padding-top: 8px;
+  font-size: 12px;
+  min-width: 0;
+}
+
+.treeCard .nodeBottom > span {
+  min-width: 0;
+  max-width: 100%;
+  flex-wrap: wrap;
+  overflow-wrap: anywhere;
+}
+
+.nodeDrag,
+.nodeToggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  padding: 8px;
+  border: 1px solid transparent;
+  border-radius: 7px;
+  color: var(--muted);
+  background: transparent;
+  transition:
+    background 0.18s,
+    border-color 0.18s;
+}
+
+.nodeDrag {
+  cursor: grab;
+  user-select: none;
+}
+
+.nodeDrag:active {
+  cursor: grabbing;
+}
+
+.nodeDrag svg,
+.nodeToggle svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  pointer-events: none;
+}
+
+.nodeToggle[aria-expanded='true'] {
+  background: var(--brand-soft);
+  color: var(--brand);
+}
+
+.nodeDrag:hover:not(:disabled),
+.nodeToggle:hover:not(:disabled) {
+  background: var(--brand-soft);
+  border-color: var(--line);
+  color: var(--brand);
+}
+
+.nodeControls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 4px;
+  flex: 0 0 auto;
+  min-width: 0;
+  max-width: 100%;
+  padding-left: 8px;
+  border-left: 1px solid var(--line);
+}
+
+.nodeControls .iconButton {
+  flex: 0 0 36px;
+  width: 36px;
+  min-width: 36px;
+  height: 36px;
+  padding: 8px;
+}
+
+.nodeControls .iconButton:disabled {
+  background: transparent;
+  color: var(--muted);
+}
+
+.isDragging {
+  opacity: 0.55;
+}
+
+.isDragging > .treeCard {
+  border-style: dashed;
+}
+
+.treeCard.dropBefore,
+.treeCard.dropAfter {
+  border-color: var(--brand);
+}
+
+.treeCard.dropBefore:before,
+.treeCard.dropAfter:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--brand);
+  border-radius: 3px;
+  box-shadow: 0 0 0 2px var(--surface);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.treeCard.dropBefore:before {
+  top: -8px;
+}
+
+.treeCard.dropAfter:after {
+  bottom: -8px;
+}
+
+.nodeUp {
+  transform: rotate(90deg);
+}
+
+@media (max-width: 980px) {
+  .stage-cards {
+    gap: 9px;
+  }
+}
+
+@media (max-width: 760px) {
+  .nodeChildren {
+    margin-left: 0;
+    padding-left: 11px;
+  }
+  .treeCard {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 44px;
+    gap: 4px;
+    padding: 8px;
+    min-height: 0;
+  }
+  .nodeDrag {
+    display: none;
+  }
+  .nodeToggle {
+    grid-column: 2;
+    grid-row: 1;
+    width: 44px;
+    height: 44px;
+    padding: 12px;
+    align-self: start;
+  }
+  .nodeMain {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .treeCard:not(.isGroup) .nodeMain {
+    grid-column: 1 / -1;
+  }
+  .nodeControls {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    gap: 8px;
+    margin-top: 6px;
+    padding: 6px 0 0;
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+  .nodeControls .iconButton {
+    flex-basis: 44px;
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    padding: 12px;
+  }
+  .treeCard .nodeTop {
+    gap: 5px;
+  }
+  .treeCard .nodeBottom {
+    gap: 6px 10px;
+  }
+  .nodeCard {
+    min-height: 120px;
+  }
+  .nodeCard h3 {
+    font-size: 13px;
+  }
+  .nodeCard .badge {
+    font-size: 10px;
+  }
+  .nodeCard .nodeBottom {
+    font-size: 10px;
+  }
+}
+
+@media print {
+  .nodeDrag,
+  .nodeToggle,
+  .nodeControls {
+    display: none;
+  }
+  .nodeCard,
+  .card {
+    break-inside: avoid;
+  }
+}

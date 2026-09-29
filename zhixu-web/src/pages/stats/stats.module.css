@@ -1,0 +1,331 @@
+.statsSummary {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 23px;
+}
+
+.statsStat {
+  padding: 22px;
+}
+
+.statsStat .top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #6a7061;
+  font-size: 11px;
+  margin-bottom: 14px;
+}
+
+.statsStat .top .icon {
+  width: 18px;
+  height: 18px;
+  color: #686e5d;
+}
+
+.statsStat strong {
+  font-size: 30px;
+  font-weight: 600;
+  color: #526543;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.statsStat strong small {
+  font-size: 11px;
+  font-weight: 400;
+  color: #686e5e;
+  margin-left: 5px;
+}
+
+.statsStat p {
+  font-size: 10px;
+  color: #666e5d;
+  margin-top: 12px;
+}
+
+.statsStat p span {
+  color: #56734b;
+}
+
+.statsStat.featured {
+  background: #f0f5e8;
+  border-color: #dfe9d4;
+}
+
+.statsStat.featured .top .icon {
+  color: #7a6c45;
+}
+
+.headingDate {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #666e60;
+  font-size: 12px;
+  background: #f0f3e9;
+  border: 1px solid #e6eadc;
+  border-radius: 7px;
+  padding: 8px 11px;
+}
+
+.statsHeat {
+  padding: 25px 28px;
+  margin-bottom: 24px;
+}
+
+.statsHeat .sectionHeading {
+  margin-bottom: 26px;
+}
+
+.statsHeat .sectionHeading h2 {
+  font-size: 16px;
+}
+
+.statsHeat .heatDays {
+  grid-template-rows: repeat(7, 16px);
+  font-size: 9px;
+  line-height: 16px;
+  gap: 5px;
+  width: 25px;
+}
+
+.statsHeat :global(.heatGrid) {
+  grid-template-rows: repeat(7, 16px);
+  gap: 5px;
+}
+
+.statsHeat .heatMonths {
+  font-size: 10px;
+}
+
+.statsHeat :global(.heatCell) {
+  border-radius: 3px;
+}
+
+.statsHeatBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  font-size: 10px;
+  color: #68715d;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.statsHeatBottom :global(.heatLegend) {
+  margin: 0;
+}
+
+.heatSelected {
+  min-height: 17px;
+}
+
+.statsColumns {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 23px;
+}
+
+.statsColumns > * {
+  min-width: 0;
+}
+
+.topicProgressPanel {
+  padding: 24px;
+}
+
+.topicProgressRow {
+  padding: 18px 0;
+  border-bottom: 1px solid #edf0e7;
+  display: block;
+  width: 100%;
+  text-align: left;
+}
+
+.topicProgressRow:last-child {
+  border-bottom: 0;
+  padding-bottom: 1px;
+}
+
+.topicProgressRow .top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.topicProgressRow h4 {
+  font-size: 12px;
+}
+
+.topicProgressRow .circleIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 9px;
+}
+
+.topicProgressRow .circleIcon .icon {
+  width: 17px;
+  height: 17px;
+}
+
+.topicProgressRow .top > strong {
+  margin-left: auto;
+  font-size: 14px;
+  color: #627351;
+}
+
+.topicProgressRow .progress {
+  height: 5px;
+}
+
+.topicProgressRow .bottom {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #686f60;
+  margin-top: 10px;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.reviewPanel {
+  padding: 24px;
+}
+
+.reviewLabel {
+  color: #627051;
+  font-size: 10px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  letter-spacing: 0.2px;
+}
+
+.reviewLabel .icon {
+  width: 13px;
+  height: 13px;
+}
+
+.reviewCard {
+  padding: 22px;
+  background: #f3f6ee;
+  border: 1px solid #e4ecda;
+  border-radius: 10px;
+  margin-top: 19px;
+}
+
+.reviewCard h3 {
+  font-size: 14px;
+  margin: 12px 0 6px;
+}
+
+.reviewDate {
+  font-size: 10px;
+  color: #686f5f;
+}
+
+.reviewCard p {
+  font-size: 11px;
+  color: #656f5b;
+  line-height: 2;
+  margin: 13px 0;
+}
+
+.reviewPanel .nextReview {
+  margin-top: 17px;
+  font-size: 10px;
+  line-height: 1.9;
+  color: #676f5c;
+  display: flex;
+  gap: 7px;
+}
+
+.nextReview .icon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+@media (max-width: 980px) {
+  .statsHeat :global(.heatCell):nth-child(-n + 182) {
+    display: none;
+  }
+  .statsSummary {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .statsColumns {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  .statsHeat {
+    padding: 22px;
+  }
+  .statsHeat :global(.heatGrid) {
+    gap: 3px;
+    grid-template-rows: repeat(7, 12px);
+  }
+  .statsHeat :global(.heatDays) {
+    gap: 3px;
+    grid-template-rows: repeat(7, 16px);
+  }
+  .headingDate {
+    display: none;
+  }
+}
+
+@media (max-width: 540px) {
+  .statsSummary {
+    gap: 10px;
+  }
+  .statsStat {
+    padding: 17px;
+  }
+  .statsStat strong {
+    font-size: 26px;
+  }
+  .statsStat .top {
+    font-size: 10px;
+  }
+  .statsStat p {
+    font-size: 9px;
+  }
+  .statsHeat {
+    padding: 19px 15px;
+  }
+  .statsHeat :global(.heatGrid) {
+    grid-template-rows: repeat(7, 10px);
+    gap: 3px;
+  }
+  .statsHeat :global(.heatDays) {
+    grid-template-rows: repeat(7, 10px);
+    gap: 3px;
+    width: 13px;
+    line-height: 10px;
+    font-size: 8px;
+  }
+  .statsHeat .heatMonths {
+    font-size: 8px;
+  }
+  .statsHeatBottom {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .statsHeat .sectionHeading {
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .statsHeat .sectionHeading h2 {
+    font-size: 14px;
+  }
+  .topicProgressPanel,
+  .reviewPanel {
+    padding: 21px;
+  }
+}

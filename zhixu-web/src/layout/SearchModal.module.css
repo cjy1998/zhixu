@@ -1,0 +1,38 @@
+.input {
+  margin-top: 8px;
+  height: 40px;
+}
+
+.results {
+  margin: 16px 0;
+}
+
+.result {
+  width: 100%;
+  padding: 13px 8px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  font-size: 12px;
+  color: #647255;
+  gap: 12px;
+}
+
+.result:hover {
+  background: #f4f8ed;
+}
+
+.topicTitle {
+  display: block;
+  margin-top: 4px;
+  color: #697061;
+}
+
+.empty {
+  padding: 28px;
+  text-align: center;
+  color: #696f61;
+  font-size: 12px;
+}

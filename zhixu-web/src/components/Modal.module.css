@@ -1,0 +1,144 @@
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  background: #24372c59;
+  backdrop-filter: blur(4px);
+  z-index: 80;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 28px;
+  animation: fade 0.2s;
+}
+
+.modal {
+  background: white;
+  border: 1px solid #e6ecdf;
+  border-radius: 19px;
+  box-shadow: 0 24px 90px #18322026;
+  width: 650px;
+  max-width: 100%;
+  max-height: calc(100dvh - 50px);
+  overflow: auto;
+  position: relative;
+  animation: modal-in 0.22s ease-out;
+}
+
+.modalTop {
+  padding: 24px 29px 21px;
+  border-bottom: 1px solid #edf1e7;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modalTitle {
+  display: flex;
+  gap: 11px;
+  align-items: center;
+}
+
+.modalTitle .circleIcon {
+  width: 37px;
+  height: 37px;
+  border-radius: 10px;
+}
+
+.modalTitle h2 {
+  font-size: 16px;
+}
+
+.modalTitle p {
+  font-size: 10px;
+  color: #666e5c;
+  margin-top: 3px;
+}
+
+.modalBody {
+  padding: 27px 30px;
+}
+
+.modalBottom {
+  padding: 18px 30px 22px;
+  border-top: 1px solid #edf1e7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  background: #fdfefb;
+  border-radius: 0 0 19px 19px;
+}
+
+.modalBottom > small {
+  font-size: 10px;
+  color: #666e5c;
+}
+
+.reviewModal {
+  display: block;
+}
+
+@media (max-width: 760px) {
+  .modalBackdrop {
+    padding: 15px;
+  }
+  .modal {
+    max-height: calc(100dvh - 30px);
+  }
+  .modalBody {
+    padding: 23px;
+  }
+  .modalTop {
+    padding: 20px 23px;
+  }
+  .modalBottom {
+    padding: 18px 23px;
+  }
+}
+
+@media (max-width: 540px) {
+  .modalBackdrop {
+    padding: 10px;
+  }
+  .modal {
+    max-height: calc(100dvh - 20px);
+    border-radius: 14px;
+  }
+  .modalTop {
+    padding: 17px;
+  }
+  .modalBody {
+    padding: 21px 17px;
+  }
+  .modalBottom {
+    padding: 16px 17px;
+    gap: 10px;
+  }
+  .modalBottom .btn {
+    font-size: 11px;
+    padding: 8px 11px;
+  }
+  .modalBottom > small {
+    font-size: 9px;
+    max-width: 110px;
+  }
+  .modalTitle h2 {
+    font-size: 14px;
+  }
+  .modalTitle p {
+    font-size: 9px;
+  }
+}
+
+@media print {
+  .modalBackdrop {
+    position: relative;
+    backdrop-filter: none;
+    background: white;
+  }
+  .modal {
+    box-shadow: none;
+    max-height: none;
+    overflow: visible;
+  }
+}

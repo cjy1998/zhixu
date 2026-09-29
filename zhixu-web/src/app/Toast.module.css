@@ -1,0 +1,30 @@
+#toast {
+  position: fixed;
+  bottom: 28px;
+  left: calc(50% + 70px);
+  transform: translateX(-50%) translateY(20px);
+  z-index: 160;
+  padding: 12px 20px;
+  border-radius: 9px;
+  background: #294535;
+  color: white;
+  box-shadow: 0 5px 25px #22362426;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition:
+    opacity 0.2s,
+    transform 0.2s;
+  max-width: calc(100vw - 40px);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+@media (max-width: 760px) {
+  .toast {
+    left: 50%;
+  }
+}

@@ -1,0 +1,109 @@
+.orbit {
+  margin: 0 auto 18px;
+  width: 77px;
+  height: 77px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #edf5e5;
+  border-radius: 22px;
+  color: var(--brand);
+}
+
+.orbit .icon {
+  width: 34px;
+  height: 34px;
+}
+
+.orbit:after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border: 1px dashed #c3d7b3;
+  border-radius: 28px;
+  animation: spin 18s linear infinite;
+}
+
+.reviewModal .modalBody {
+  padding: 27px 31px;
+}
+
+.reviewSummary {
+  background: #f2f6ea;
+  border-radius: 9px;
+  padding: 19px 22px;
+  margin-bottom: 24px;
+  color: #627251;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.reviewBlock {
+  margin-bottom: 22px;
+}
+
+.reviewBlock h3 {
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 10px;
+}
+
+.reviewBlock h3 .icon {
+  width: 16px;
+  height: 16px;
+  color: #5f724f;
+}
+
+.reviewBlock p,
+.reviewBlock li {
+  font-size: 11px;
+  color: #66715a;
+  line-height: 2;
+}
+
+.reviewBlock ul {
+  padding-left: 18px;
+  margin: 0;
+}
+
+.reviewHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 17px;
+  flex-wrap: wrap;
+}
+
+.reviewHead h2 {
+  font-size: 21px;
+}
+
+.reviewLoading {
+  text-align: center;
+  padding: 42px 0 24px;
+}
+
+.reviewLoading h3 {
+  font-size: 19px;
+  margin-top: 24px;
+}
+
+.reviewLoading p {
+  color: #68705d;
+  font-size: 12px;
+  line-height: 2;
+  margin: 10px 0 24px;
+}
+
+@media (max-width: 540px) {
+  .reviewModal .modalBody {
+    padding: 23px 20px;
+  }
+  .reviewHead h2 {
+    font-size: 18px;
+  }
+}
